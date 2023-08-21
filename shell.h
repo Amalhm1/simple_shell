@@ -111,6 +111,9 @@ typedef struct builtin
 	int (*func)(info_t *);
 } builtin_table;
 
+/* loophsh.c */
+int loophsh(char **);
+
 /* toem_atoi.c */
 int interactive(info_t *);
 int is_delim(char, char *);
