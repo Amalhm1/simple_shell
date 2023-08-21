@@ -37,7 +37,7 @@ int unset_alias(info_t *info, char *str)
 }
 
 /**
- * set_alias - Assigns an alias to string
+ * set_alias - - Assigns an alias to string
  * @info: tHe parameter struct
  * @str: the string alias
  *
@@ -58,10 +58,11 @@ int set_alias(info_t *info, char *str)
 }
 
 /**
-*print_alias – this code displays an alias string
-*@node: alias node
-*Return: on success 0, on error 1
-*/
+ * print_alias – This Displays an alias string
+ * @node: an alias node
+ *
+ * Return: on success 0, on error 1
+ */
 int print_alias(list_t *node)
 {
 	char *p = NULL, *a = NULL;
@@ -70,21 +71,21 @@ int print_alias(list_t *node)
 	{
 		p = _strchr(node->str, '=');
 		for (a = node->str; a <= p; a++)
-		_putchar(*a);
-		_putchar('\'');
-		_puts(p + 1);
-		_puts("'\n");
+		_eputchar(*a);
+		_eputchar('\'');
+		_eputs(p + 1);
+		_eputs("'\n");
 		return (0);
 	}
 	return (1);
 }
 
 /**
-*_myalias - Mimics the alias builtin (man alias)
-*@info: Arrangement containing potential arguments. Utilized to maintain
-*constant function prototype.
-*Return: Always 0
-*/
+ * _myalias - Mimics the alias builtin (man alias)
+ * @info: Arrangement containing potential arguments. Utilized to maintain
+ *  constant function prototype.
+ *  Return: Always 0
+ */
 int _myalias(info_t *info)
 {
 	int i = 0;

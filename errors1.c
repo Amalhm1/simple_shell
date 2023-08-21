@@ -3,9 +3,9 @@
 /**
  * _erratoi - Changes a string to an integer
  * @s: String to be changed
- * Return: return 0 when there are no numbers in the string, otherwise the resulting converted number
-
- *       -1 on error 
+ * Return: return 0 when there are no numbers in the string.
+ * otherwise the resulting converted number
+ *-1 on error
  */
 int _erratoi(char *s)
 {
@@ -33,7 +33,8 @@ int _erratoi(char *s)
  * print_error - prints out an error message
  * @info: The parameter AND return information structure
  * @estr: string containing detailed error type
- * Return: return 0 when there are no numbers in the string, otherwise the resulting converted number
+ * Return: return 0 when there are no numbers in the string.
+ * otherwise the resulting converted number
  *-1 on error
  */
 void print_error(info_t *info, char *estr)
@@ -48,15 +49,15 @@ void print_error(info_t *info, char *estr)
 }
 
 /**
- * print_d - function displays a decimal (integer) number in base 10 
-* @input: the provided input
+ * print_d - function displays a decimal (integer) number in base 10.
+ * @input: the provided input
  * @fd: The file descriptor to write into
  *
  * Return: The number of chars printed
  */
 int print_d(int input, int fd)
 {
-	int (*__putchar)(char) = _putchar;
+	int (*__putchar)(char) = __putchar;
 	int i, count = 0;
 	unsigned int _abs_, current;
 
@@ -87,10 +88,10 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number – A conversion function, a clone of itoa
+ * convert_number – conversion function a clone of itoa.
  * @num: Number
- * @base: Base
- * @flags: Argument flags
+ * @base: base
+ * @flags: Argument Flags
  *
  * Return: String
  */
@@ -123,7 +124,7 @@ char *convert_number(long int num, int base, int flags)
 }
 
 /**
- * remove_comments - A function that replaces the initial occurrence of '#' with a null terminator '\0'
+ * remove_comments - funct that replaces the first occurrence of '#' with '\0'.
  * @buf: The address of the string to be modified
  *
  * Return: Always 0;

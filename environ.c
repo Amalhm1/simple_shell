@@ -1,11 +1,12 @@
 #include "shell.h"
 
 /**
-* _myenv - prints the current environment
-* @info: Framework containing potential arguments, utilized for
-* Constant function prototype.
-* Return: Always 0
-*/
+ * _myenv - prints the current environment
+ * @info: Framework containing potential arguments, utilized for
+ * Constant function prototype.
+ *
+ * Return: Always 0
+ */
 int _myenv(info_t *info)
 {
 	print_list_str(info->env);
@@ -16,8 +17,8 @@ int _myenv(info_t *info)
  * _getenv - gets the value of an environ variable
  * @info: Framework containing potential arguments, utilized for
  * Constant function prototype.
- * @name: env var name
  *
+ * @name: env var name
  * Return: The value
  */
 char *_getenv(info_t *info, const char *name)
@@ -36,10 +37,11 @@ char *_getenv(info_t *info, const char *name)
 }
 
 /**
- * _mysetenv - Initialize a new environ variable.
+ * _mysetenv - Initialize a new environ variable
  * or adjust an existing one
  * @info: Framework containing potential arguments, utilized for
  * Constant function prototype.
+ *
  *  Return: Always 0
  */
 int _mysetenv(info_t *info)
@@ -58,6 +60,7 @@ int _mysetenv(info_t *info)
  * _myunsetenv - Eliminate an environ var
  * @info: Framework containing potential arguments, utilized for
  * Constant function prototype.
+ *
  * Return: Always 0
  */
 int _myunsetenv(info_t *info)
@@ -79,6 +82,7 @@ int _myunsetenv(info_t *info)
  * populate_env_list - populates the environment linked list
  * @info: Framework containing potential arguments, utilized for
  * Constant function prototype.
+ *
  * Return: Always 0
  */
 int populate_env_list(info_t *info)

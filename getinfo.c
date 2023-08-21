@@ -2,7 +2,7 @@
 
 /**
  * clear_info – Sets up the info_t structure
- * @info: The address of the struct 
+ * @info: The address of the struct
  */
 void clear_info(info_t *info)
 {
@@ -13,10 +13,10 @@ void clear_info(info_t *info)
 }
 
 /**
- * set_info - Sets up the info_t structure
-* @info: The address of the struct 
- * @av: The vector of arg 
- */
+* set_info - Sets up the info_t structure
+* @info: The address of the struct
+* @av: The vector of arg
+*/
 void set_info(info_t *info, char **av)
 {
 	int i = 0;
@@ -24,13 +24,13 @@ void set_info(info_t *info, char **av)
 	info->fname = av[0];
 	if (info->arg)
 	{
-		info->argv = strtow(info->arg, " \t");
+		info->argv ,strtok(info->arg, " \t");
 		if (!info->argv)
 		{
 			info->argv = malloc(sizeof(char *) * 2);
 			if (info->argv)
 			{
-				info->argv[0] = _strdup(info->arg);
+				info->argv[0] = strdup(info->arg);
 				info->argv[1] = NULL;
 			}
 		}
@@ -50,7 +50,7 @@ void set_info(info_t *info, char **av)
  */
 void free_info(info_t *info, int all)
 {
-	ffree(info->argv);
+	free(info->argv);
 	info->argv = NULL;
 	info->path = NULL;
 	if (all)
@@ -65,9 +65,9 @@ void free_info(info_t *info, int all)
 			free_list(&(info->alias));
 		ffree(info->environ);
 			info->environ = NULL;
-		bfree((void **)info->cmd_buf);
+		free((void **)info->cmd_buf);
 		if (info->readfd > 2)
 			close(info->readfd);
-		_putchar(BUF_FLUSH);
+		putchar(BUF_FLUSH);
 	}
 }

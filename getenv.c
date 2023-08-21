@@ -50,7 +50,7 @@ int _unsetenv(info_t *info, char *var)
 }
 
 /**
- * _setenv - Set a new environment Var
+ * _setenv - Set a new environment Var,
  *or adjust an existing one
  * @info: Framework containing potential arguments, utilized for
  * Constant function prototype.
