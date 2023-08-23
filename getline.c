@@ -2,12 +2,12 @@
 
 /**
  * input_buf - buffers chained commands
-*@info: parameter struct
-*@buf: The buffer add
-*@len: address of the length var
-*
-* Return: Number of bytes read
-*/
+ * @info: parameter struct
+ * @buf: address of buffer
+ * @len: address of len var
+ *
+ * Return: bytes read
+ */
 ssize_t input_buf(info_t *info, char **buf, size_t *len)
 {
 	ssize_t r = 0;
@@ -45,10 +45,10 @@ ssize_t input_buf(info_t *info, char **buf, size_t *len)
 }
 
 /**
- * get_input - gets a line excluding the newline char
- * @info: The struct parameter
+ * get_input - gets a line minus the newline
+ * @info: parameter struct
  *
- * Return: Number of bytes read
+ * Return: bytes read
  */
 ssize_t get_input(info_t *info)
 {
@@ -57,7 +57,7 @@ ssize_t get_input(info_t *info)
 	ssize_t r = 0;
 	char **buf_p = &(info->arg), *p;
 
-	_eputchar(BUF_FLUSH);
+	_putchar(BUF_FLUSH);
 	r = input_buf(info, &buf, &len);
 	if (r == -1) /* EOF */
 		return (-1);
@@ -82,7 +82,7 @@ ssize_t get_input(info_t *info)
 		}
 
 		*buf_p = p; /* pass back pointer to current command position */
-		return (strlen(p)); /* return length of current command */
+		return (_strlen(p)); /* return length of current command */
 	}
 
 	*buf_p = buf; /* else not a chain, pass back buffer from _getline() */
@@ -91,9 +91,9 @@ ssize_t get_input(info_t *info)
 
 /**
  * read_buf - reads a buffer
- * @info: The struct containing parameters
- * @buf: The buffer
- * @i: The size of the buffer
+ * @info: parameter struct
+ * @buf: buffer
+ * @i: size
  *
  * Return: r
  */
@@ -110,12 +110,12 @@ ssize_t read_buf(info_t *info, char *buf, size_t *i)
 }
 
 /**
- * _getline - retrieves the next line of input from STDIN
- * @info: The struct holding the parameters
- * @ptr: The add of a pointer to a buffer, preallocated or NULL
- * @length: the size of preallocated 'ptr' buffer if not NULL
+ * _getline - gets the next line of input from STDIN
+ * @info: parameter struct
+ * @ptr: address of pointer to buffer, preallocated or NULL
+ * @length: size of preallocated ptr buffer if not NULL
  *
- * Return: the obtained line
+ * Return: s
  */
 int _getline(info_t *info, char **ptr, size_t *length)
 {
@@ -164,7 +164,7 @@ int _getline(info_t *info, char **ptr, size_t *length)
  */
 void sigintHandler(__attribute__((unused))int sig_num)
 {
-	_eputs("\n");
+	_puts("\n");
 	_puts("$ ");
 	_putchar(BUF_FLUSH);
 }

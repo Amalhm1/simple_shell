@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * get_history_file - Retrieves the history file
- * @info: The parameter struct
+ * get_history_file - gets the history file
+ * @info: parameter struct
  *
- * Return: allocated string containing the hist file
+ * Return: allocated string containg history file
  */
 
 char *get_history_file(info_t *info)
@@ -14,7 +14,7 @@ char *get_history_file(info_t *info)
 	dir = _getenv(info, "HOME=");
 	if (!dir)
 		return (NULL);
-	buf = malloc(sizeof(char) * (_strlen(dir) + strlen(HIST_FILE) + 2));
+	buf = malloc(sizeof(char) * (_strlen(dir) + _strlen(HIST_FILE) + 2));
 	if (!buf)
 		return (NULL);
 	buf[0] = 0;
@@ -25,10 +25,10 @@ char *get_history_file(info_t *info)
 }
 
 /**
- * write_history - Generates a File, or appends to an existing file
- * @info: The Struct Of The Parameter
+ * write_history - creates a file, or appends to an existing file
+ * @info: the parameter struct
  *
- * Return: on success 1, else -1
+ * Return: 1 on success, else -1
  */
 int write_history(info_t *info)
 {
@@ -54,10 +54,10 @@ int write_history(info_t *info)
 }
 
 /**
- * read_history - Reads History From a File
- * @info: the structure of the parameter
+ * read_history - reads history from file
+ * @info: the parameter struct
  *
- * Return: The Count Of Hist on Success, 0 otherwise
+ * Return: histcount on success, 0 otherwise
  */
 int read_history(info_t *info)
 {
@@ -103,10 +103,10 @@ int read_history(info_t *info)
 }
 
 /**
- * build_history_list - appends an entry to a history linked list
- * @info: Structure containing possible arguments. Utilized for maintenance
- * @buf: buffer containing data
- * @linecount: Count of the history lines, histcount
+ * build_history_list - adds entry to a history linked list
+ * @info: Structure containing potential arguments. Used to maintain
+ * @buf: buffer
+ * @linecount: the history linecount, histcount
  *
  * Return: Always 0
  */
@@ -124,10 +124,10 @@ int build_history_list(info_t *info, char *buf, int linecount)
 }
 
 /**
- * renumber_history - adjusts numbering of the hist linked list after changes
- * @info: Structure containing possible arguments. Employed to maintain
+ * renumber_history - renumbers the history linked list after changes
+ * @info: Structure containing potential arguments. Used to maintain
  *
- * Return: The Updated histcount
+ * Return: the new histcount
  */
 int renumber_history(info_t *info)
 {
