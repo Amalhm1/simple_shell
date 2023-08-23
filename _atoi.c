@@ -25,12 +25,10 @@ int is_delim(char c, char *delim)
 			return (1);
 	return (0);
 }
-
 /**
- * _isalpha – this code examines the alphabetic character
- * @c: The char to input
- * Return: 1 if c is alphabetic, otherwise return 0
- *
+ * _isalpha - checks for alphabetic character
+ * @c: The charact to input
+ * Return: 1 if c is alphabetic, 0 if not alphabetic
  */
 
 int _isalpha(int c)

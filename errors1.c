@@ -88,13 +88,14 @@ int print_d(int input, int fd)
 }
 
 /**
- * convert_number – conversion function a clone of itoa.
- * @num: Number
- * @base: base
- * @flags: Argument Flags
+ * convert_number - converter function, a clone of itoa
+ * @num: Nmbr
+ * @base: Base
+ * @flags: arg flags
  *
- * Return: String
+ * Return: string
  */
+
 char *convert_number(long int num, int base, int flags)
 {
 	static char *array;
