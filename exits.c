@@ -29,14 +29,14 @@ char *_strncpy(char *dest, char *src, int n)
 	}
 	return (s);
 }
-
 /**
- **_strncat – Combines two strings
- *@dest: The first string
- *@src: The second string
- *@n: The maximum number of bytes to be utilized
- *Return: The string that has been concatenated
+ **_strncat - concatenates two strings
+ *@dest: the first string
+ *@src: the second string
+ *@n: the number of bytes to be maximally utilized
+ *Return: the concatenated string
  */
+
 char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;

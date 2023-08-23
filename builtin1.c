@@ -43,6 +43,7 @@ int unset_alias(info_t *info, char *str)
  *
  * Return: on success 0, on error 1
  */
+
 int set_alias(info_t *info, char *str)
 {
 	char *p;
@@ -58,11 +59,12 @@ int set_alias(info_t *info, char *str)
 }
 
 /**
- * print_alias – This Displays an alias string
- * @node: an alias node
+ * print_alias - prints an alias string
+ * @node: alias node
  *
- * Return: on success 0, on error 1
+ * Return: Always 0 on success, 1 otherwise
  */
+
 int print_alias(list_t *node)
 {
 	char *p = NULL, *a = NULL;
