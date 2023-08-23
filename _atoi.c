@@ -16,6 +16,7 @@ int interactive(info_t *info)
  * @c: The charac  to check
  * @delim: delimiter string
  * Return: Return 1 if true, Return 0 if false
+ *
  */
 int is_delim(char c, char *delim)
 {
@@ -26,9 +27,10 @@ int is_delim(char c, char *delim)
 }
 
 /**
- * _isalpha – Examines the alphabetic character
- * @c: The input char
- * Return: Return 1 if c is alphabetic, If otherwise return 0
+ * _isalpha – this code examines the alphabetic character
+ * @c: The char to input
+ * Return: 1 if c is alphabetic, otherwise return 0
+ *
  */
 
 int _isalpha(int c)
@@ -44,6 +46,7 @@ int _isalpha(int c)
 * @s: string to be converted
 * Return: return 0 when there are no numbers in the string.
 * otherwise the resulting converted number
+*
 */
 
 int _atoi(char *s)
